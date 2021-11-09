@@ -1,11 +1,13 @@
 :root {
-  --primary: #1d5888;
-  --secondary: #ff993b;
-  --dark: #292929;
-  --white: #e2e4e2;
+  --primary: #07a0c3;
+  --secondary: #f0c808;
+  --dark: #565264;
+  --accent: #e83f6f;
+  --white: #fff;
 }
 
-body {
+body,
+h4.lead {
   color: var(--dark);
 }
 
@@ -13,6 +15,22 @@ nav {
   background: var(--dark);
 }
 
+.logo-font {
+  font-family: whomp, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+a.btn {
+  color: var(--accent);
+  text-decoration: none;
+  border: solid 1px var(--accent);
+}
+
+a.btn:hover {
+  color: var(--white);
+  background-color: var(--accent);
+}
 footer {
   background-color: var(--dark);
   padding: 1rem;
