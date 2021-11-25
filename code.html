@@ -2,118 +2,316 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: Antwaun Codes</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>FIZZ BUZZ: Antwaun Codes</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
-    <script src="https://kit.fontawesome.com/e6304ecfad.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/e6304ecfad.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.typekit.net/ljx6kre.css">
 
-    <!-- Convert this to an external style sheet -->
-    <link rel="stylesheet" href="css/site.css">
-    <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/prism.css">
+  <!-- Convert this to an external style sheet -->
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/prism.css">
 
 </head>
 
 <body class="d-flex flex-column h-100">
 
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">APP NAME</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="app.html">The App</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
-                    </li>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand logo-font" href="#">Fizz Buzz</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="app.html">The App</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
+          </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="#">Git Repo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="https://antwaun.codes">About</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" href="#">Git Repo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://antwaun.codes">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <main class="flex-shrink-0">
+  <main class="flex-shrink-0">
 
-        <div class="container py-5 px-5 mt-5">
-            <h2 class="border-1 border-bottom border-dark">The Code</h2>
-            <div class="row row-cols-1 row-cols-lg-2">
-                <div class="col-lg-8">
-                    <pre class="line-numbers">
+    <div class="container py-5 px-5 mt-5">
+      <h2 class="border-1 border-bottom border-dark">The Code</h2>
+      <div class="row row-cols-1 row-cols-lg-2">
+        <div class="col-lg-8">
+          <pre class="line-numbers">
                         <code class="language-javascript">
-                            // Call Hello World
-                            function helloWorld(){
-                                alert("hello world!")
-                            }
+                            function getValues() {
+                                let fizzValue = document.getElementById("fizzValue").value;
+                                let buzzValue = document.getElementById("buzzValue").value;
+                              
+                                fizzValue = parseInt(fizzValue);
+                                buzzValue = parseInt(buzzValue);
+                              
+                                if (Number.isInteger(fizzValue) && Number.isInteger(buzzValue)) {
+                                  let fbArray = fizzBuzzC(fizzValue, buzzValue);
+                                  displayData(fbArray);
+                                } else {
+                                  alert("You must enter integers to Fizz Buzz the count!");
+                                }
+                              }
+                              
+                              function fizzBuzz(fizzValue, buzzValue) {
+                                let returnArray = [];
+                              
+                                // loop from 1 to 100
+                                for (let i = 1; i <= 100; i++) {
+                                  if (i % fizzValue == 0 && i % buzzValue == 0) {
+                                    returnArray.push("FizzBuzz");
+                                  } else if (i % fizzValue == 0) {
+                                    returnArray.push("Fizz");
+                                  } else if (i % buzzValue == 0) {
+                                    returnArray.push("Buzz");
+                                  } else {
+                                    returnArray.push(i);
+                                  }
+                                }
+                                return returnArray;
+                              }
+                              
+                              function fizzBuzzB(fizzValue, buzzValue) {
+                                let returnArray = [];
+                                let Fizz = false;
+                                let Buzz = false;
+                              
+                                for (let i = 1; i <= 100; i++) {
+                                  Fizz = i % fizzValue == 0;
+                                  Buzz = i % buzzValue == 0;
+                                  switch (true) {
+                                    case Fizz && Buzz:
+                                      returnArray.push("FizzBuzz");
+                                      break;
+                                    case Fizz:
+                                      returnArray.push("Fizz");
+                                      break;
+                                    case Buzz:
+                                      returnArray.push("Buzz");
+                                      break;
+                                    default:
+                                      returnArray.push(i);
+                                  }
+                                }
+                              
+                                return returnArray;
+                              }
+                              
+                              function fizzBuzzC(fizzValue, buzzValue) {
+                                let returnArray = [];
+                              
+                                for (let i = 1; i <= 100; i++) {
+                                  let value =
+                                    (i % fizzValue == 0 ? "Fizz" : "") + (i % buzzValue == 0 ? "Buzz" : "") ||
+                                    i;
+                                  returnArray.push(value);
+                                }
+                              
+                                return returnArray;
+                              }
+                              
+                              function displayData(fbArray) {
+                                //loop over the array and create a tablerow for each item
+                              
+                                //get teh table body element from the page
+                                let tableBody = document.getElementById("results");
+                              
+                                //get the template row
+                                let templateRow = document.getElementById("fbTemplate");
+                              
+                                for (let index = 0; index < fbArray.length; index += 5) {
+                                  let tableRow = document.importNode(templateRow.content, true);
+                              
+                                  let rowCols = tableRow.querySelectorAll("td");
+                                  rowCols[0].classList.add(fbArray[index]);
+                                  rowCols[0].textContent = fbArray[index];
+                              
+                                  rowCols[1].classList.add(fbArray[index + 1]);
+                                  rowCols[1].textContent = fbArray[index + 1];
+                              
+                                  rowCols[2].classList.add(fbArray[index + 2]);
+                                  rowCols[2].textContent = fbArray[index + 2];
+                              
+                                  rowCols[3].classList.add(fbArray[index + 3]);
+                                  rowCols[3].textContent = fbArray[index + 3];
+                              
+                                  rowCols[4].classList.add(fbArray[index + 4]);
+                                  rowCols[4].textContent = fbArray[index + 4];
+                              
+                                  tableBody.appendChild(tableRow);
+                                }
+                                // add all the rows to the table
+                              }
+                              
+                              function resetForm() {
+                                document.getElementById("btnReset").reset();
+                              }
+                              
                         </code>
                     </pre>
-                </div>
-                <div class="col-lg-4">
-                    <p>The code is structured in one function</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert with a message of "Hello World".</p>
-                </div>
-            </div>
         </div>
-    </main>
+        <div class="col-lg-4">
+          <p>The code is structured in three functions</p>
+          <h5>getValues</h5>
+          <p>The <em><b>getValues</b></em> functions is our main function. We begin my getting the input from the user.
+            The users input is stored in two variables <em>fizzValue</em> and <em>buzzValue</em>. This is done my using
+            the document method 'getElementById' to find each element with the <b>id</b> or <em>fizzValue</em> or
+            <em>buzzValue</em>. When we receive the
+            input we must make sure that the values are numeric. This is done by using the <em>parseInt</em> function.
+            We set our fizzValue and buzzValue equal to parseInt then pass the values as arguments.
+          </p>
 
-    <footer class="footer mt-auto py-3 sticky-footer">
-        <div class="container-fluid">
-            <div class="row row-cols-1  row-cols-lg-3 gy-2">
-                <div class="col order-last order-lg-first text-light">
-                    <div>
-                        <span class="text-muted">&copy;2021</span>
-                        Antwaun Johnson
-                    </div>
-                </div>
-                <div class="col d-flex align-items-center justify-content-start justify-content-lg-center">
-                    <img src="img/antwaun-codes-white-v4.svg" alt="Antwaun Codes Logo" height="24">
-                </div>
-                <div class="col d-flex align-items-center justify-content-start justify-content-lg-end">
-                    <div class="row">
-                        <div class="col social"><a href="https://www.linkedin.com/in/antwaunljohnson/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
-                        </div>
-                        <div class="col social"><a href="https://github.com/antwaunjohnson" target="_blank"><i class="fab fa-github fa-2x"></i></a>
-                        </div>
-                        <div class="col social"><a href="https://twitter.com/AntwaunCodes" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          <p>
+            Once we are sure that are values are numbers we use an if statement to execute the <strong>FizzBuzz</strong>
+            program. We begin the if statement checking the fizzValue and buzzValue simultaneously. This can be done by
+            passing each value to the <b>Number</b>.isInteger() method. Inside of our if statement we create the
+            <em>fbArray</em> variable and set it equal to one of our <b><em>fizzBuzz</em></b> function, passing the
+            fizzValue and buzzValue as arguments. Finally, the <b><em>displayData</em></b> function is called and passed
+            the fbArray variable as argument. Finally, if either of the values are not a number, the else block is
+            executed which alerts the user <em>"You must enter integers to Fizz Buzz the count!"</em>
+          </p>
+
+          <h5>The fizzBuzz functions</h5>
+
+          <p>Each of the <b>fizzBuzz</b> functions take the fizzValue and buzzValue as arguments. They each begin by
+            setting the variable <em>returnArray</em> to an empty array. For each for loop we set <b>i = 1</b>
+            as long as <b>i</b> is less than or equal to <b>100</b>, <b> i++</b> is used to increment the count
+            until
+            the
+            loop is completed</p>
+
+          <p>Each of the functions uses a different method to reach the "FizzBuzz" objective.
+          <h6>Function 1</h6>
+          <b><em>fizzBuzz</em></b> uses a for loop. We loop over each number first checking to see if it is divisible
+          by or fizzValue and buzzValue. If both values are divisible, "FizzBuzz" is pushed into the array. Next we
+          check to see if the number is divisible by the fizzValue. If this is true, "Fizz" is added to the array in
+          place of the
+          number. Next we check to see if the number is divisible by the buzzValue. If this is true, "Buzz" is added
+          to the array
+          in place of the number. Finally, if the number is not divisible by either the fizzValue or the buzzValue,
+          the number is added to the array. Once we have looped through all the numbers, the completed array is
+          returned.
+          </p>
+
+          <h6>Function 2</h6>
+
+          <p>Before we being our for loop in the <b><em>fizzBuzzB</em></b> function, we create two variables
+            <em>Fizz</em> and <em>Buzz</em> setting their values to false. With the for loop Fizz is equal to <b>i %
+              fizzValue == 0</b> while Buzz is equal to <b>i % buzzVAlue == 0</b> Next we use a switch statement to
+            check if each case within our switch statement is true. The first case checks if both values are true. If
+            both values are true, "FizzBuzz" is added to the array. If the Fizz case evaluates to true, "Fizz" is added
+            to the array. If the Buzz case evaluates to true, "Buzz" is added to the array. Finally, if none of the
+            cases within the switch statement evaluate to true, the default is to add the number to the array. Once we
+            have looped through all the numbers, the completed array is returned.
+          </p>
+
+          <h6>Function 3</h6>
+
+          <p>Finally, <b><em>fizzBuzzC</em></b> uses the conditional (ternary) operator. We create the variable
+            <em>value</em> and set it equal to our ternary operator. Each expression checks to see whether the number
+            divisible by the fizzValue or buzzValue is equal to zero if the number is not divisible by either expression
+            the value is set to an empty string. If the value is divisible by the fizzValue and buzzValue, concatenation
+            is used to add "FizzBuzz" into the array. If the value is only divisible by fizzValue or buzzValue, either
+            "Fizz" or "Buzz" is added to the array. If the value is not divisible by the fizzValue or buzzValue, the
+            value is set equal to <b>i</b>, then we add the value into the array. Once we have looped through all the
+            numbers, the completed array is returned.
+          </p>
+
+          <h5>displayData</h5>
+          <p>The <b><em>displayData</em></b> function takes <em>fbArray</em> as an argument. We use the document method
+            'getElementById' to find the element with the <b>id</b> of <em>'results'</em> and set it equal to
+            <b>tableBody</b>. We also use the same method to set <b>tableRow</b> equal to the element that has the
+            <b>id</b> of <em>'fbTemplate'</em>. What is unique about our html element that holds the id of 'fbtemplate'
+            is the <strong>content template element</strong>. According to <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template" target="_blank">The Mozilla
+              docs</a> "The
+            <em>template</em> element is a mechanism for holding html that is not rendered immediately when a page is
+            loaded but may be instantiated subsequently during runtime using JavaScript". In this function we set the
+            <b>index</b> equal to <em>0</em>. As long as the index is less than the length of fbArray, we use <b>index
+              += 5</b> to iterate by 5. Within the for loop we use the document method <b><em>importNode</em></b> to
+            create a document fragment from our content template element and set it equal to<b>tableRow</b>. This method
+            takes two arguments, <b>templateRow.content</b> and <b>true</b> to ensure that all the descendants of the
+            node are copied. Next we set the variable <em>rowCols</em> equal to all of the <em>td</em> elements using
+            the <b>querySelectorAll</b> method. Since we only want to have 5 elements in each row, we add a the
+            <em>classList</em> method to dynamically add a class of <b>.Fizz, .Buzz, or .FizzBuzz</b> to color to either
+            of the elements that display Fizz, Buzz or FizzBuzz. We also set the <em>textContent</em> of each element to
+            the index of fbArray. Finally we use the <b>appendChild</b> method and pass it the argument of
+            <em>tableRow</em>
+
+          </p>
+
+          <h5>resetForm</h5>
+          Finally, the reset form function is used to reset the form to its default values.
+
         </div>
-    </footer>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
-        </script>
-    <script src="js/prism.js"></script>
-    <script>
-        Prism.plugins.NormalizeWhitespace.setDefaults({
-            'remove-trailing': true,
-            'remove-indent': true,
-            'left-trim': true,
-            'right-trim': true
-        })
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer mt-auto py-3 sticky-footer">
+    <div class="container-fluid">
+      <div class="row row-cols-1  row-cols-lg-3 gy-2">
+        <div class="col order-last order-lg-first text-light">
+          <div>
+            <span class="text-muted">&copy;2021</span>
+            Antwaun Johnson
+          </div>
+        </div>
+        <div class="col d-flex align-items-center justify-content-start justify-content-lg-center">
+          <img src="img/antwaun-codes-white-v4.svg" alt="Antwaun Codes Logo" height="24">
+        </div>
+        <div class="col d-flex align-items-center justify-content-start justify-content-lg-end">
+          <div class="row">
+            <div class="col social"><a href="https://www.linkedin.com/in/antwaunljohnson/" target="_blank"><i
+                  class="fab fa-linkedin fa-2x"></i></a>
+            </div>
+            <div class="col social"><a href="https://github.com/antwaunjohnson" target="_blank"><i
+                  class="fab fa-github fa-2x"></i></a>
+            </div>
+            <div class="col social"><a href="https://twitter.com/AntwaunCodes" target="_blank"><i
+                  class="fab fa-twitter fa-2x"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
+  <script src="js/prism.js"></script>
+  <script>
+    Prism.plugins.NormalizeWhitespace.setDefaults({
+      'remove-trailing': true,
+      'remove-indent': true,
+      'left-trim': true,
+      'right-trim': true
+    })
+  </script>
 
 </body>
 

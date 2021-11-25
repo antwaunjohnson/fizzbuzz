@@ -8,6 +8,9 @@
 
 body,
 h4.lead {
+  font-family: forma-djr-micro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
   color: var(--dark);
 }
 
@@ -21,13 +24,15 @@ nav {
   font-style: normal;
 }
 
-a.btn {
+a.btn,
+.btn-link {
   color: var(--accent);
   text-decoration: none;
   border: solid 1px var(--accent);
 }
 
-a.btn:hover {
+a.btn:hover,
+.btn-link:hover {
   color: var(--white);
   background-color: var(--accent);
 }
@@ -52,6 +57,9 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: komet, sans-serif;
+  font-weight: 700;
+  font-style: normal;
   color: var(--primary);
 }
 .bsicon {
@@ -78,7 +86,20 @@ main > .container {
 .checklist > li i {
   color: var(--secondary);
 }
+.Fizz {
+  color: var(--primary);
+  font-weight: bold;
+}
 
+.Buzz {
+  color: var(--secondary);
+  font-weight: bold;
+}
+
+.FizzBuzz {
+  color: var(--accent);
+  font-weight: bold;
+}
 code[class*="language-"],
 pre[class*="language-"] {
   white-space: pre-wrap;
